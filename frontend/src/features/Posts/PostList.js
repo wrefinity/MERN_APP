@@ -6,7 +6,7 @@ import {
   getPostsError,
   fetchPosts,
 } from "./postslice";
-import PostSingle from "./PostSingle";
+import PostElement from "./PostElement";
 
 const PostList = () => {
   const dispatch = useDispatch();
@@ -24,11 +24,11 @@ const PostList = () => {
   if (status === "loading") {
     displayPosts = <p>"Loading ..." </p>;
   } else if (status === "suceeded") {
-    const ascendPost = post
+    const ascendPost = posts
       .slice()
       .sort((a, b) => b.date.localeCompare(a.date));
     displayPosts = ascendPost.map((post) => {
-      <PostSingle key={post.id} post={post} />;
+      <PostElement key={post.id} post={post} />;
     });
   } else if (status === "failed") {
     displayPosts = <p>"Error" </p>;

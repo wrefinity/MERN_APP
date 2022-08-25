@@ -9,7 +9,7 @@ const commentSchema = new Mongoose.Schema(
       },
       image: { type: String},
       content: { type: String, required: true },
-      reply: { type: Array, default:[]},
+      replies: { type: Array, default:[]},
       reactions: { type: Object, default:{}},
       title: {type: String},
       date: {type: String},

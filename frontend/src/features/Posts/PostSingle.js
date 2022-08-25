@@ -1,17 +1,13 @@
-import React from "react";
-import PostReaction from "./PostReaction";
-import TimeAgo from "../TimeAgo";
-
-const PostSingle = ({ post }) => {
+import React from 'react';
+import {useSelector} from 'react-redux';
+import {selectPostById} from './postslice';
+import {Link, useParams} from 'react-router-dom';
+const PostSingle = () => {
+    const {postId} = useParams();
+    const post = useSelector(state => selectPostById(state, postId))
   return (
-    <article>
-      <h3>{post.title}</h3>
-      <p>{post.content.substring(0, 100)} ...</p>
-      <p>
-        <TimeAgo timestamp={posts.date} />
-      </p>
-      <PostReaction post={post} />
-    </article>
-  );
-};
-export default PostSingle;
+    <div>PostSingle</div>
+  )
+}
+
+export default PostSingle
