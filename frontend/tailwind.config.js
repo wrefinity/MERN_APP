@@ -43,6 +43,12 @@ module.exports = {
         xl: "1280px",
         "2xl": "1536px",
       },
+      colors: {
+        crimsonColor: "#e80013",
+        textColor: "#515151",
+        headingColor: "#2e2e2e",
+        primary: "#f5f3f3",
+      },
     },
   },
   plugins: [],
